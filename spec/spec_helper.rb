@@ -1,5 +1,4 @@
 require "bundler/setup"
-require "nytimes_top_stories"
 require_relative '../config/environment.rb'
 
 
