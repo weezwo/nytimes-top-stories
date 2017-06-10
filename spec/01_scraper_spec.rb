@@ -18,7 +18,7 @@ But he also said that Mr. Comey’s comments “showed no collusion, no obstruct
       expect(scraped_stories.first).to have_key(:headline)
       expect(scraped_stories.first).to have_key(:summary)
       expect(scraped_stories.first).to have_key(:byline)
-      expect(scraped_stories).to include(stories_array[0], stories_array[1])
+      expect(scraped_stories).to include(stories_array[0])
     end
   end
 
