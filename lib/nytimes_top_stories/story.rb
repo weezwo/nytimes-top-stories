@@ -5,16 +5,16 @@ class NytimesTopStories::Story
     @headline = story_hash[:headline]
     @byline = story_hash[:byline]
     @summary = story_hash[:summary]
+    @@all << self
   end
 
   def self.new_from_array
     NytimesTopStories::Scraper.get_top_stories.each do |scraped_story|
       story = NytimesTopStories::Story.new(scraped_story)
-      @@all << story
     end
   end
 
-  def all
+  def self.all
     @@all
   end
 end

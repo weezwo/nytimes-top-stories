@@ -8,4 +8,14 @@ describe "Story" do
     expect(story.byline).to eq(story_hash[:byline])
     expect(story.summary).to eq(story_hash[:summary])
   end
+
+  it "pushes each new story into @@all" do
+    story = NytimesTopStories::Story.new(story_hash)
+    expect(NytimesTopStories::Story.all).to include(story)
+  end
+
+  describe ".new_from_array" do
+    it "accepts an array of scraped stories and instatiates an object from each" do
+    end
+  end
 end
