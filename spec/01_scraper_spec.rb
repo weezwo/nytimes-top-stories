@@ -30,4 +30,12 @@ But he also said that Mr. Comey’s comments “showed no collusion, no obstruct
     end
   end
 
+  describe ".get_date" do
+    it "returns a string including the current date" do
+      date = NytimesTopStories::Scraper.get_date("fixtures/nytindex.htm")
+      expect(date).to be_a(String)
+      expect(date).to eq("Saturday, June 10, 2017")
+    end
+  end
+
 end

@@ -27,7 +27,11 @@ class NytimesTopStories::Scraper
 
   def self.get_weather(site = "http://nytimes.com")
     doc = self.open_site(site)
-    doc.css("#weather .weather-button").text
+    doc.css(".masthead-menu #weather .weather-button").text
   end
 
+  def self.get_date(site = "http://nytimes.com")
+    doc = self.open_site(site)
+    doc.css(".masthead-menu .date").text
+  end
 end
