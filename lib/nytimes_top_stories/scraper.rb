@@ -1,10 +1,14 @@
 require 'open-uri'
 
 class NytimesTopStories::Scraper
-  def self.get_top_stories(site = "http://nytimes.com")
+
+  def self.open_site(site = "http://nytimes.com")
     html = open(site)
     doc = Nokogiri::HTML(html)
+  end
 
+  def self.get_top_stories(site = "http://nytimes.com")
+    doc = self.open_site(site)
     top_stories_array = []
     stories = doc.css("#top-news .collection .theme-summary")
     stories.each do |story|
@@ -19,6 +23,11 @@ class NytimesTopStories::Scraper
         top_stories_array << story_hash
       end
     top_stories_array
+  end
+
+  def self.get_weather(site = "http://nytimes.com")
+    doc = self.open_site(site)
+    doc.css("#weather .weather-button").text
   end
 
 end

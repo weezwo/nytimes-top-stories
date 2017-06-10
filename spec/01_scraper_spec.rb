@@ -10,7 +10,7 @@ But he also said that Mr. Comey’s comments “showed no collusion, no obstruct
                         byline: "By MARK LANDLER and GARDINER HARRIS",
                         summary: "The president accused the Persian Gulf nation of being a “funder of terror at a very high level,” undercutting efforts to mediate a dispute between Qatar and its neighbors."}]}
 
-  describe "#get_top_stories" do
+  describe ".get_top_stories" do
     it "is a class method that scrapes the NYTimes front page and returns an array of hashes containing details of all stories with front-page summaries." do
 
       scraped_stories = NytimesTopStories::Scraper.get_top_stories("fixtures/nytindex.htm")
@@ -19,6 +19,14 @@ But he also said that Mr. Comey’s comments “showed no collusion, no obstruct
       expect(scraped_stories.first).to have_key(:summary)
       expect(scraped_stories.first).to have_key(:byline)
       expect(scraped_stories).to include(stories_array[0])
+    end
+  end
+
+  describe ".get_weather" do
+    it "returns a string including the local temperature" do
+      weather = NytimesTopStories::Scraper.get_weather("fixtures/nytindex.htm")
+      expect(weather).to be_a(String)
+      expect(weather).to eq("73°F")
     end
   end
 
