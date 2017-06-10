@@ -9,8 +9,9 @@ class NytimesTopStories::Story
 
   def self.new_from_array
     scrape = Scraper.new
-    scrape.get_top_stories.each do |story|
-
+    scrape.get_top_stories.each do |scraped_story|
+      story = Story.new(scraped_story)
+      @@all << story
     end
   end
 end
