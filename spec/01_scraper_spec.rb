@@ -13,7 +13,7 @@ But he also said that Mr. Comey’s comments “showed no collusion, no obstruct
   describe "#get_top_stories" do
     it "is a class method that scrapes the NYTimes front page and returns an array of hashes containing details of all stories with front-page summaries." do
 
-      scraped_stories = Scraper.get_top_stories("fixtures/nytindex.htm")
+      scraped_stories = NytimesTopStories::Scraper.get_top_stories("fixtures/nytindex.htm")
       expect(scraped_stories).to be_a(Array)
       expect(scraped_stories.first).to have_key(:headline)
       expect(scraped_stories.first).to have_key(:summary)
