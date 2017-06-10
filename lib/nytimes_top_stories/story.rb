@@ -1,0 +1,3 @@
+class NytimesTopStories::Story
+
+end
