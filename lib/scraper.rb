@@ -1,8 +1,8 @@
 require 'open-uri'
 
 class Scraper
-  def self.get_top_stories
-    html = open("fixtures/nytindex.htm")
+  def self.get_top_stories(site = "http://nytimes.com")
+    html = open(site)
     doc = Nokogiri::HTML(html)
 
     top_stories_array = []
