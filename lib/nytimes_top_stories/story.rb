@@ -8,8 +8,8 @@ class NytimesTopStories::Story
     @@all << self
   end
 
-  def self.new_from_array
-    NytimesTopStories::Scraper.get_top_stories.each do |scraped_story|
+  def self.new_from_array(array = NytimesTopStories::Scraper.get_top_stories)
+      array.each do |scraped_story|
       story = NytimesTopStories::Story.new(scraped_story)
     end
   end
