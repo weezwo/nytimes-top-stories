@@ -19,9 +19,6 @@ class NytimesTopStories::Scraper
         top_stories_array << story_hash
       end
     top_stories_array
-    # stories.css(".story-heading a").text - title
-    # stories.css(".byline").text - byline
-    # stories.css(".summary").text
   end
 
 end
