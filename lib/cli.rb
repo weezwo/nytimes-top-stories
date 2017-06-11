@@ -33,7 +33,7 @@ class NytimesTopStories::CLI
   end
 
   def goodbye
-    puts "Check back later for more headlines!"
+    puts "The truth is more important now than ever."
     exit(0)
   end
 end
