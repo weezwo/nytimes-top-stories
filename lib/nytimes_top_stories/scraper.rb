@@ -20,7 +20,10 @@ class NytimesTopStories::Scraper
       else
         story_hash[:summary] = story.css("p.summary").text.strip
       end
-        top_stories_array << story_hash
+      if !story.at_css(".story-heading a").nil?
+        story_hash[:url] = story.css(".story-heading a").attr("href").value
+      end
+      top_stories_array << story_hash
     end
     top_stories_array
   end
