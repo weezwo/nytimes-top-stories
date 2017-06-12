@@ -1,9 +1,3 @@
-# NytimesTopStories
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/nytimes_top_stories`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -22,7 +16,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+This gem scrapes data from the New York Times website and presents the top stories
+on the front page, here defined as those with a headline, byline, and summary.
+Upon execution, the user will be presented with a numbered list of headlines for stories
+meeting these criteria. Enter the number of the headline for more information
+about the story, type "list" to scrape the site again, or type exit to terminate the program.
 
 ## Development
 

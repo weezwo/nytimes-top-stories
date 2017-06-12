@@ -22,14 +22,6 @@ But he also said that Mr. Comey’s comments “showed no collusion, no obstruct
     end
   end
 
-  describe ".get_weather" do
-    it "returns a string including the local temperature" do
-      weather = NytimesTopStories::Scraper.get_weather("fixtures/nytindex.htm")
-      expect(weather).to be_a(String)
-      expect(weather).to eq("73°F")
-    end
-  end
-
   describe ".get_date" do
     it "returns a string including the current date" do
       date = NytimesTopStories::Scraper.get_date("fixtures/nytindex.htm")
