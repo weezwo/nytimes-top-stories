@@ -22,11 +22,11 @@ class NytimesTopStories::CLI
         puts story.headline
         puts story.byline
         puts story.summary
-        puts "Press enter to open, press any other key [+ Enter] to escape."
+        puts "Press enter to open, enter any other input to escape."
         choice = gets.strip
         if choice == ""
           system("open #{story.url}")
-        end      
+        end
       elsif choice == "list"
         self.call
       elsif choice == "exit"
