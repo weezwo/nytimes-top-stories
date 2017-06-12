@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "./lib/nytimes_top_stories/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "nytimes_top_stories"
+  spec.name          = "nytimes-top-stories"
   spec.version       = NytimesTopStories::VERSION
   spec.authors       = ["Luisa Scavo"]
   spec.email         = ["luisascavo@gmail.com"]

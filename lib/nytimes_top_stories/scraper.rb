@@ -2,12 +2,12 @@ require 'open-uri'
 
 class NytimesTopStories::Scraper
 
-  def self.open_site(site = "http://nytimes.com")
+  def self.open_site(site = "https://www.nytimes.com")
     html = open(site)
     doc = Nokogiri::HTML(html)
   end
 
-  def self.get_top_stories(site = "http://nytimes.com")
+  def self.get_top_stories(site = "https://www.nytimes.com")
     doc = self.open_site(site)
     top_stories_array = []
     stories = doc.css("#top-news .collection .theme-summary")
