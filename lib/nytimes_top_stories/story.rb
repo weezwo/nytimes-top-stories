@@ -16,6 +16,17 @@ class NytimesTopStories::Story
     end
   end
 
+  def puts_story
+    puts @headline
+    puts @byline
+    puts @summary
+    puts "Press enter to open, enter any other input to escape."
+    choice = gets.strip
+    if choice == ""
+      self.open_story
+    end
+  end
+
   def open_story
     system("open #{@url}")
   end
