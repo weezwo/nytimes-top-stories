@@ -19,14 +19,7 @@ class NytimesTopStories::CLI
       choice = gets.strip.downcase
       if choice.to_i > 0 && !NytimesTopStories::Story.all[choice.to_i-1].nil?
         story = NytimesTopStories::Story.all[choice.to_i-1]
-        puts story.headline
-        puts story.byline
-        puts story.summary
-        puts "Press enter to open, enter any other input to escape."
-        choice = gets.strip
-        if choice == ""
-          system("open #{story.url}")
-        end
+        self.puts_story(story)
       elsif choice == "list"
         self.call
       elsif choice == "exit"
@@ -34,6 +27,17 @@ class NytimesTopStories::CLI
       else
         puts "Input invalid. Type 'list' or 'exit'."
       end
+    end
+  end
+
+  def puts_story(story)
+    puts story.headline
+    puts story.byline
+    puts story.summary
+    puts "Press enter to open, enter any other input to escape."
+    choice = gets.strip
+    if choice == ""
+      system("open #{story.url}")
     end
   end
 
