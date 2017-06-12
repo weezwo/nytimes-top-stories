@@ -22,7 +22,7 @@ class NytimesTopStories::CLI
         puts story.headline
         puts story.byline
         puts story.summary
-        puts "Press enter to open, press any other key to escape."
+        puts "Press enter to open, press any other key [+ Enter] to escape."
         choice = gets.strip
         if choice == ""
           system("open #{story.url}")
