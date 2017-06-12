@@ -17,7 +17,7 @@ class NytimesTopStories::CLI
     until choice == "exit"
       puts "Enter story number for more information, or type 'list'/'exit'"
       choice = gets.strip.downcase
-      if choice.to_i > 0
+      if choice.to_i > 0 && !NytimesTopStories::Story.all[choice.to_i-1].nil?
         story = NytimesTopStories::Story.all[choice.to_i-1]
         puts story.headline
         puts story.byline
@@ -26,7 +26,7 @@ class NytimesTopStories::CLI
         choice = gets.strip
         if choice == ""
           system("open #{story.url}")
-        end
+        end      
       elsif choice == "list"
         self.call
       elsif choice == "exit"
