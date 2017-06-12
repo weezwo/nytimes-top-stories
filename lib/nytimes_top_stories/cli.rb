@@ -37,7 +37,7 @@ class NytimesTopStories::CLI
     puts "Press enter to open, enter any other input to escape."
     choice = gets.strip
     if choice == ""
-      system("open #{story.url}")
+      story.open_story
     end
   end
 

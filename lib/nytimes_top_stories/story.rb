@@ -16,6 +16,10 @@ class NytimesTopStories::Story
     end
   end
 
+  def open_story
+    system("open #{@url}")
+  end
+
   def self.all
     @@all
   end
