@@ -1,7 +1,7 @@
 # coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "./lib/nytimes_top_stories/version"
+require "./lib/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "nytimes-top-stories"
@@ -33,5 +33,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.0"
 
   spec.add_dependency 'nokogiri', '~> 1.6', '>= 1.6.8'
-  spec.add_dependency'require_all', '~> 1.4'
+  spec.add_dependency'open_uri_redirections'
 end

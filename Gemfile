@@ -5,4 +5,4 @@ source "https://rubygems.org"
 gem "nokogiri"
 gem 'rspec'
 gem 'pry'
-gem 'require_all', '~> 1.3', '>= 1.3.3'
+gem 'open_uri_redirections'
