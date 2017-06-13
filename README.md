@@ -16,7 +16,7 @@ about the story, type "list" to scrape the site again, or type exit to terminate
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/weezwo/nytimes_top_stories.
+Bug reports and pull requests are welcome on GitHub at https://github.com/weezwo/nytimes-top-stories.
 
 ## License
 
