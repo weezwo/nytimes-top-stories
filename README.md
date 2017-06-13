@@ -3,7 +3,7 @@
 In the command line, run:
 
 ```ruby
-gem install 'nytimes_top_stories'
+gem install 'nytimes-top-stories'
 ```
 
 ## Usage
