@@ -2,12 +2,18 @@ class NytimesTopStories
   class Story
     attr_accessor :headline, :byline, :summary, :url
     @@all = []
+    @@history = []
     def initialize(story_hash)
       @headline = story_hash[:headline].gsub(/â/,"'")
       @byline = story_hash[:byline]
       @summary = story_hash[:summary].gsub(/â/,"'")
       @url = story_hash[:url]
       @@all << self
+      @@history << self unless self.class.check_for_headline(self)
+    end
+
+    def self.check_for_headline(story)
+      @@history.any?{|s| s.headline == story.headline}
     end
 
     def self.new_from_array(array = NytimesTopStories::Scraper.get_top_stories)
@@ -36,8 +42,17 @@ class NytimesTopStories
       @@all
     end
 
+    def self.history
+      @@history
+    end
+
     def self.clear_all
       @@all.clear
     end
+
+    def self.find(index)
+      @@all[index]
+    end
+
   end
 end

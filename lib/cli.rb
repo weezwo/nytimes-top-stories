@@ -13,16 +13,24 @@ class NytimesTopStories
       NytimesTopStories::Story.all.each.with_index(1) {|story, i| puts "#{i}: #{story.headline}"}
     end
 
+    def display_historical_stories
+      NytimesTopStories::Story.history.each.with_index(1) {|story, i| puts "#{i}: #{story.headline}"}
+    end
+
     def menu
       choice = nil
       until choice == "exit"
         puts "Enter story number for more information, or type 'list'/'exit'"
         choice = gets.strip.downcase
-        if choice.to_i > 0 && !NytimesTopStories::Story.all[choice.to_i-1].nil?
-          story = NytimesTopStories::Story.all[choice.to_i-1]
+        #if choice.to_i > 0 && !NytimesTopStories::Story.all[choice.to_i-1].nil?
+        if choice.to_i.between?(1, NytimesTopStories::Story.all.size)
+          #story = NytimesTopStories::Story.all[choice.to_i-1]
+          story = NytimesTopStories::Story.find(choice.to_i-1)
           story.puts_story
         elsif choice == "list"
           self.call
+        elsif choice == "history"
+          self.display_historical_stories
         elsif choice == "exit"
           break
         else
